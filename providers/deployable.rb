@@ -31,7 +31,7 @@ action :deploy do
 
   check_command = "#{asadmin_command('list-applications')} #{new_resource.target} | grep -q -- '#{versioned_name} '"
 
-  Chef::Log.info "Deploying #{new_resource.component_name}"
+  Chef::Log.info "Deploying #{new_resource.component_name} from #{new_resource.url}"
 
   cached_package_filename = nil
   if new_resource.url =~ /^file\:\/\//
